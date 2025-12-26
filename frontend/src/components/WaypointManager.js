@@ -21,14 +21,12 @@ function WaypointManager({
 
   const handleStartSelect = (location) => {
     // Remove existing start if any
-    const filtered = waypoints.filter(w => w.type !== 'start');
     onAddWaypoint({...location, type: 'start'});
     setShowStartSearch(false);
   };
 
   const handleDestSelect = (location) => {
     // Remove existing destination if any
-    const filtered = waypoints.filter(w => w.type !== 'destination');
     onAddWaypoint({...location, type: 'destination'});
     setShowDestSearch(false);
   };
