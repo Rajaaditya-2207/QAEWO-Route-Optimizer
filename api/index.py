@@ -11,13 +11,7 @@ backend_path = os.path.join(current_dir, '..', 'backend')
 sys.path.insert(0, backend_path)
 
 # Import Flask app
-from app import app
+from app import app as flask_app
 
-# Vercel expects the app to be named 'app' or a handler function
-# Export the Flask app directly
-def handler(request):
-    """Vercel serverless function handler"""
-    return app(request.environ, request.start_response)
-
-# Also export app for direct use
-app = app
+# Vercel serverless handler
+app = flask_app
