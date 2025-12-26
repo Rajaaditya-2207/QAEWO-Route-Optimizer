@@ -16,7 +16,7 @@ const api = axios.create({
  * Check backend health status
  */
 export const checkBackendHealth = () => {
-  return api.get('/api/health');
+  return api.get('/health');
 };
 
 /**
@@ -25,7 +25,7 @@ export const checkBackendHealth = () => {
  * @returns {Promise} - Promise with optimization results
  */
 export const optimizeRoute = (waypoints) => {
-  return api.post('/api/optimize-route', {
+  return api.post('/optimize-route', {
     waypoints: waypoints.map(wp => ({
       lat: wp.lat,
       lng: wp.lng,
