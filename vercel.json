@@ -19,24 +19,7 @@
       "dest": "api/index.py"
     },
     {
-      "src": "/static/(.*)",
-      "dest": "frontend/build/static/$1"
-    },
-    {
-      "src": "/favicon.ico",
-      "dest": "frontend/build/favicon.ico"
-    },
-    {
-      "src": "/manifest.json",
-      "dest": "frontend/build/manifest.json"
-    },
-    {
-      "src": "/asset-manifest.json",
-      "dest": "frontend/build/asset-manifest.json"
-    },
-    {
-      "src": "/(.*\\.(?:js|css|png|jpg|jpeg|gif|svg|ico|json|woff|woff2|ttf|eot))",
-      "dest": "frontend/build/$1"
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
