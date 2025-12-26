@@ -30,9 +30,20 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 def health_check():
     """Health check endpoint"""
     return jsonify({
-        'status': 'Backend running',
+        'backend': {
+            'status': 'online',
+            'message': 'Backend running successfully'
+        },
+        'frontend': {
+            'status': 'deployed',
+            'message': 'Frontend should be accessible at root URL'
+        },
         'service': 'QAEWO - Quantum Annealing + Whale Optimization',
-        'version': '2.0.0'
+        'version': '2.0.0',
+        'endpoints': {
+            'health': '/api/health',
+            'optimize': '/api/optimize-route'
+        }
     })
 
 @app.route('/api/optimize-route', methods=['POST'])

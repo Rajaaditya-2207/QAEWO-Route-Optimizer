@@ -5,7 +5,7 @@
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "../public"
+        "distDir": "build"
       }
     },
     {
@@ -19,11 +19,16 @@
       "dest": "api/index.py"
     },
     {
-      "handle": "filesystem"
+      "src": "/static/(.*)",
+      "dest": "frontend/$0"
+    },
+    {
+      "src": "/(.*\\.(js|css|json|ico|png|jpg|svg))",
+      "dest": "frontend/$0"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "frontend/index.html"
     }
   ]
 }
